@@ -38,11 +38,22 @@ $ git clone git@github.com:YOUR_GITHUB_USERNAME_HERE/exercise-node-express-rest-
 4. Make the server returns the Pokemon data as JSON if their name is passed in `http://localhost:3000/pokemons/<pokemon-name>`. If no Pokemon found, return correct HTTP status code and `Not Found` string as response body.
 
 Note1: After every change, you may need to restart the Express server to see changes
+
 Note2: To test your server response, you can use [curl](https://curl.se/) in the Terminal or [Insomnia](https://insomnia.rest/)/[Postman](https://www.postman.com/) if you prefer apps.
 
 ## Examples
 
-1. `/pokemons`
+1. `http://localhost:3000/pokemons`
+
+![](./examples/pokemons.png)
+
+2. `http://localhost:3000/pokemons/<name>` - Success
+
+![](./examples/pokemonName200.png)
+
+3. `http://localhost:3000/pokemons/<name>` - Not found
+
+![](./examples/pokemonName404.png)
 
 ## Resources
 

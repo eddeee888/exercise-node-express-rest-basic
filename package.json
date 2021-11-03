@@ -4,7 +4,7 @@
   "description": "In this exercise, we will be creating a simple [Express](https://expressjs.com/) server that:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "node index.js"
   },
   "repository": {
     "type": "git",

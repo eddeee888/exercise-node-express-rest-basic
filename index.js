@@ -12,6 +12,20 @@ app.get("/pokemons", (req, res) => {
   res.json(data);
 });
 
+app.get("/pokemons/:pokemonName", (req, res) => {
+  const pokemonName = req.params.pokemonName;
+
+  const pokemon = data.find(
+    (pokemon) => pokemon.name.toLowerCase() === pokemonName.toLowerCase()
+  );
+
+  if (!pokemon) {
+    res.status(404).send("Not found");
+  }
+
+  res.json(pokemon);
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

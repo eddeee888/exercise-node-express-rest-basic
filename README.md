@@ -30,6 +30,7 @@ $ git clone git@github.com:YOUR_GITHUB_USERNAME_HERE/exercise-node-express-rest-
 ## Exercise
 
 - [Exercise 1 - Creating an Express server](./exercises/exercise-1.md)
+- [Exercise 2 - Set up MySQL](./exercises/exercise-2.md)
 
 ## Examples
 

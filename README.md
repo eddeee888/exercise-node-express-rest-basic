@@ -31,6 +31,7 @@ $ git clone git@github.com:YOUR_GITHUB_USERNAME_HERE/exercise-node-express-rest-
 
 - [Exercise 1 - Creating an Express server](./exercises/exercise-1.md)
 - [Exercise 2 - Set up MySQL](./exercises/exercise-2.md)
+- [Exercise 3 - REST API](./exercises/exercise-3.md)
 
 ## Examples
 
@@ -52,3 +53,4 @@ $ git clone git@github.com:YOUR_GITHUB_USERNAME_HERE/exercise-node-express-rest-
 - Express: https://expressjs.com/
 - HTTP Methods: https://www.w3schools.com/tags/ref_httpmethods.asp
 - REST API concepts and examples: https://www.youtube.com/watch?v=7YcW25PHnAA
+- Event Loop: https://www.youtube.com/watch?v=8aGhZQkoFbQ

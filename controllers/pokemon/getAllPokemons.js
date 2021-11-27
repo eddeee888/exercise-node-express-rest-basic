@@ -28,7 +28,7 @@ const getAllPokemons = async (req, res) => {
     res.json(result);
   } catch (e) {
     console.error(e);
-    res.status(500);
+    res.sendStatus(500);
   }
 };
 

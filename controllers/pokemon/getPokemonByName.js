@@ -24,7 +24,7 @@ const getPokemonByName = async (req, res) => {
       .groupBy("p.pokedex_id");
 
     if (!pokemon) {
-      res.status(404).send("Not found");
+      res.sendStatus(404);
     }
 
     const result = {
@@ -35,7 +35,7 @@ const getPokemonByName = async (req, res) => {
     res.json(result);
   } catch (e) {
     console.error(e);
-    res.status(500);
+    res.sendStatus(500);
   }
 };
 

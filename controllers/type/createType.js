@@ -9,9 +9,13 @@ const createType = async (req, res) => {
     return;
   }
 
-  const [id] = await knex(`${tables.Types}`).insert({ name });
-
-  res.json({ id });
+  try {
+    const [id] = await knex(`${tables.Types}`).insert({ name });
+    res.json({ id });
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
 };
 
 module.exports = {

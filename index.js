@@ -1,5 +1,9 @@
 const express = require("express");
-const { getAllPokemons, getPokemonByName } = require("./controllers/pokemon");
+const {
+  getAllPokemons,
+  getPokemonByName,
+  createPokemon,
+} = require("./controllers/pokemon");
 const { createType } = require("./controllers/type");
 
 const app = express();
@@ -10,6 +14,7 @@ app.use(express.json());
 app.get("/", (req, res) => res.send("Hello World!"));
 app.get("/pokemons", getAllPokemons);
 app.get("/pokemons/:pokemonName", getPokemonByName);
+app.post("/pokemons", createPokemon);
 app.post("/types", createType);
 
 app.listen(port, () => {

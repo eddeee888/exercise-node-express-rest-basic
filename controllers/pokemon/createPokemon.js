@@ -70,9 +70,8 @@ const createPokemon = async (req, res) => {
       await trx(tables.Pokemons_Types).insert(
         typeIds.map((typeId) => ({ pokemon_id: newPokemonId, type_id: typeId }))
       );
-
-      res.json({ id: newPokemonId });
     });
+    res.json({ id: newPokemonId });
   } catch (e) {
     console.log(e);
     res.sendStatus(500);

@@ -25,6 +25,7 @@ const getPokemonByName = async (req, res) => {
 
     if (!pokemon) {
       res.sendStatus(404);
+      return;
     }
 
     const result = {

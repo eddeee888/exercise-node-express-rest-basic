@@ -4,7 +4,7 @@
   "description": "In this exercise, we will be creating a simple [Express](https://expressjs.com/) server that:",
   "main": "index.js",
   "scripts": {
-    "serve": "node index.js"
+    "serve": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
     "express": "^4.17.1",
     "knex": "^0.95.14",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

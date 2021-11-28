@@ -4,6 +4,7 @@ const {
   getPokemonByName,
   createPokemon,
   updatePokemon,
+  deletePokemon,
 } = require("./controllers/pokemon");
 const { createType } = require("./controllers/type");
 
@@ -17,6 +18,7 @@ app.get("/pokemons", getAllPokemons);
 app.get("/pokemons/:pokemonName", getPokemonByName);
 app.post("/pokemons", createPokemon);
 app.put("/pokemons/:id(\\d+)", updatePokemon);
+app.delete("/pokemons/:id(\\d+)", deletePokemon);
 app.post("/types", createType);
 
 app.listen(port, () => {

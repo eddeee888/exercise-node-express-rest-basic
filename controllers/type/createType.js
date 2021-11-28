@@ -10,7 +10,7 @@ const createType = async (req, res) => {
   }
 
   try {
-    const [id] = await knex(`${tables.Types}`).insert({ name });
+    const [id] = await knex(tables.Types).insert({ name });
     res.json({ id });
   } catch (e) {
     console.log(e);

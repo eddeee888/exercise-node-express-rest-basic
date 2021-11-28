@@ -3,6 +3,7 @@ const {
   getAllPokemons,
   getPokemonByName,
   createPokemon,
+  updatePokemon,
 } = require("./controllers/pokemon");
 const { createType } = require("./controllers/type");
 
@@ -15,6 +16,7 @@ app.get("/", (req, res) => res.send("Hello World!"));
 app.get("/pokemons", getAllPokemons);
 app.get("/pokemons/:pokemonName", getPokemonByName);
 app.post("/pokemons", createPokemon);
+app.put("/pokemons/:id(\\d+)", updatePokemon);
 app.post("/types", createType);
 
 app.listen(port, () => {

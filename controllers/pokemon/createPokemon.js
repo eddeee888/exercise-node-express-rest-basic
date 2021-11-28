@@ -48,8 +48,8 @@ const createPokemon = async (req, res) => {
       }
     } catch (e) {
       console.log(e);
-      hasValidationErrors = true;
-      validationErrors.typeIds = "Invalid typeIds";
+      res.sendStatus(500);
+      return;
     }
   }
 
@@ -59,18 +59,20 @@ const createPokemon = async (req, res) => {
   }
 
   try {
-    // Create new pokemon
-    const [newPokemonId] = await knex(tables.Pokemons).insert({
-      name,
-      pokedex_id: pokedexId,
+    await knex.transaction(async (trx) => {
+      // Create new pokemon
+      const [newPokemonId] = await trx(tables.Pokemons).insert({
+        name,
+        pokedex_id: pokedexId,
+      });
+
+      // Create associated types
+      await trx(tables.Pokemons_Types).insert(
+        typeIds.map((typeId) => ({ pokemon_id: newPokemonId, type_id: typeId }))
+      );
+
+      res.json({ id: newPokemonId });
     });
-
-    // Create associated types
-    await knex(tables.Pokemons_Types).insert(
-      typeIds.map((typeId) => ({ pokemon_id: newPokemonId, type_id: typeId }))
-    );
-
-    res.json({ id: newPokemonId });
   } catch (e) {
     console.log(e);
     res.sendStatus(500);

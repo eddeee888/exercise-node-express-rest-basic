@@ -63,8 +63,8 @@ const updatePokemon = async (req, res) => {
 
   // Check if requested pokemon exists
   if (idInt <= 0) {
-    hasValidationErrors = true;
-    validationErrors.id = "Invalid id";
+    res.sendStatus(404);
+    return;
   } else {
     try {
       const pokemon = await knex
@@ -74,8 +74,8 @@ const updatePokemon = async (req, res) => {
         .first();
 
       if (!pokemon) {
-        hasValidationErrors = true;
-        validationErrors.id = "Invalid id";
+        res.sendStatus(404);
+        return;
       }
     } catch (e) {
       console.log(e);
